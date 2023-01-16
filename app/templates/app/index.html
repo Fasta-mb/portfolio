@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid style-header">
+        <ul class="list">
+            <li>
+                <a href="{{profile.contact.linkedin}}" class="mb-3 img-header">
+                    <img class="w-100" src="{% static 'app/images/LinkedIn.png' %}" alt="LinkedIn" />
+                </a>
+            </li>
+
+            <li>
+                <a href="{{profile.contact.github}}" class="mb-3 img-header">
+                    <img class="w-100" src="{% static 'app/images/GitHub.png' %}" alt="Github" />
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="mb-3 img-header">
+                    <img class="w-100" src="{% static 'app/images/Instagram.png' %}" alt="Instagram" />
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="d-flex align-items-center wrapper">
+        <img class="myprofile" src="{% static 'app/images/mea.jpeg' %}" alt="my-profile" />
+        <div>
+            <h2 class="name">{{profile.name | capfirst}}</h2>
+            <p class="profession">{{profile.profession | title}}</p>
+        </div>
+        </div>
+        
+
+    </div>
+
+    <div>
+        {% include 'app/body.html' %}
+    </div>
+
+    <div>
+        {% include 'app/footer.html' %}
+    </div>
+{% endblock content %}
